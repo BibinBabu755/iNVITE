@@ -151,8 +151,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let autoScrollRAF = null;
     let userIdleTimer = null;
     let currentScroll = window.scrollY;
-    const SCROLL_SPEED = 1.9;    // px per frame (~114px/sec at 60fps)
-    const RESUME_DELAY = 4500;   // ms of user idle before resuming auto-scroll
+    let SCROLL_SPEED = 3.8;      // px per frame at 60fps (~228px/sec, doubled from 1.9 for a faster, engaging pace)
+    const RESUME_DELAY = 4000;   // ms of user idle before resuming auto-scroll
+
+    // Allow dynamic runtime adjustment via console if needed (e.g. window.setScrollSpeed(4.5))
+    window.setScrollSpeed = (speed) => {
+        const val = parseFloat(speed);
+        if (!isNaN(val) && val > 0) {
+            SCROLL_SPEED = val;
+            console.log(`Auto-scroll speed set to ${SCROLL_SPEED} px/frame (~${Math.round(SCROLL_SPEED * 60)} px/sec)`);
+        }
+    };
+    window.getScrollSpeed = () => SCROLL_SPEED;
 
     const autoScrollBtn = document.getElementById('autoscroll-btn');
     const autoScrollText = document.getElementById('autoscroll-text');
@@ -181,8 +191,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.scrollBehavior = 'auto';
         updateAutoScrollUI(true);
 
-        function step() {
+        let lastTime = performance.now();
+
+        function step(now) {
             if (!autoScrollActive) return;
+
+            // Frame-rate normalized delta (1.0 at 60fps, capped between 0.1 and 2.0 to avoid tab-switch jumps)
+            const delta = Math.min(Math.max((now - lastTime) / 16.667, 0.1), 2.0);
+            lastTime = now;
+
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
             if (currentScroll >= maxScroll - 2) {
                 autoScrollActive = false;
@@ -190,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateAutoScrollUI(false);
                 return;
             }
-            currentScroll += SCROLL_SPEED;
+            currentScroll += SCROLL_SPEED * delta;
             window.scrollTo(0, Math.round(currentScroll));
             autoScrollRAF = requestAnimationFrame(step);
         }
@@ -243,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Detect if user manually scrolled while auto-scroll thought it was running
-        if (autoScrollActive && Math.abs(scrolled - Math.round(currentScroll)) > 15) {
+        if (autoScrollActive && Math.abs(scrolled - Math.round(currentScroll)) > 35) {
             pauseAutoScroll(true);
         }
     }
