@@ -17,21 +17,27 @@
     --bg-glass-border: rgba(184, 146, 74, 0.28);
 
     /* Text Colors */
-    --text-primary: #341B1F;     /* Deep wine espresso ink */
-    --text-body: #4A3538;        /* Soft burgundy charcoal */
-    --text-muted: #7D6165;       /* Muted dusty mauve */
+    --text-primary: #341B1F;
+    /* Deep wine espresso ink */
+    --text-body: #4A3538;
+    /* Soft burgundy charcoal */
+    --text-muted: #7D6165;
+    /* Muted dusty mauve */
     --text-light: #A58B8E;
 
     /* Accent Jewels */
-    --accent-burgundy: #6A1B29;  /* Royal Burgundy from invitation */
+    --accent-burgundy: #6A1B29;
+    /* Royal Burgundy from invitation */
     --accent-wine: #52121E;
     --accent-maroon: #852236;
-    --accent-rose: #C97D8A;      /* Blush Rose tone */
+    --accent-rose: #C97D8A;
+    /* Blush Rose tone */
     --accent-blush: #E8CCD1;
     --accent-blush-soft: rgba(232, 204, 209, 0.45);
 
     /* Gold Elements */
-    --accent-gold: #B8924A;      /* Antique Champagne Gold */
+    --accent-gold: #B8924A;
+    /* Antique Champagne Gold */
     --accent-gold-bright: #D4AF37;
     --accent-gold-light: rgba(184, 146, 74, 0.18);
     --accent-gold-glow: rgba(184, 146, 74, 0.4);
@@ -46,7 +52,7 @@
     --radius-sm: 8px;
 
     /* Typography */
-    --font-script: 'Great Vibes', cursive;
+    --font-script: 'Alex Brush';
     --font-display: 'Cinzel Decorative', serif;
     --font-main: 'Cinzel', serif;
     --font-serif: 'Cormorant Garamond', serif;
@@ -62,7 +68,9 @@
 /* --------------------------------------------------------------------------
    2. GLOBAL RESETS & FOUNDATION
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -123,8 +131,13 @@ button {
 }
 
 @keyframes progressGradient {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 300% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 300% 50%;
+    }
 }
 
 .container {
@@ -275,8 +288,15 @@ body.intro-active {
 }
 
 @keyframes introGlowPulse {
-    0% { transform: scale(0.9); opacity: 0.7; }
-    100% { transform: scale(1.15); opacity: 1; }
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
 }
 
 .intro-doors {
@@ -377,8 +397,15 @@ body.intro-active {
 }
 
 @keyframes crestFloat {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-10px) scale(1.03); }
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.03);
+    }
 }
 
 .intro-tagline {
@@ -428,9 +455,17 @@ body.intro-active {
 }
 
 @keyframes ctaPulse {
-    0% { box-shadow: 0 0 0 0 rgba(184, 146, 74, 0.5); }
-    70% { box-shadow: 0 0 0 16px rgba(184, 146, 74, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(184, 146, 74, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(184, 146, 74, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 16px rgba(184, 146, 74, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(184, 146, 74, 0);
+    }
 }
 
 /* --------------------------------------------------------------------------
@@ -503,7 +538,9 @@ body.intro-active {
 }
 
 @keyframes rotateRecord {
-    100% { transform: rotate(360deg); }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .control-divider {
@@ -535,8 +572,17 @@ body.intro-active {
 }
 
 @keyframes pulseDot {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.4); opacity: 0.6; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 0.6;
+    }
 }
 
 /* --------------------------------------------------------------------------
@@ -562,8 +608,15 @@ body.intro-active {
     filter: drop-shadow(0 4px 15px rgba(106, 27, 41, 0.1));
 }
 
-.hero-floral-tl { top: 0; left: 0; }
-.hero-floral-tr { top: 0; right: 0; }
+.hero-floral-tl {
+    top: 0;
+    left: 0;
+}
+
+.hero-floral-tr {
+    top: 0;
+    right: 0;
+}
 
 .hero-card {
     max-width: 880px;
@@ -691,9 +744,22 @@ body.intro-active {
 }
 
 @keyframes scrollCueBounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-8px); }
-    60% { transform: translateY(-4px); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-8px);
+    }
+
+    60% {
+        transform: translateY(-4px);
+    }
 }
 
 /* --------------------------------------------------------------------------
@@ -1405,8 +1471,13 @@ body.intro-active {
     background: var(--accent-burgundy);
 }
 
-.lightbox-prev { left: -60px; }
-.lightbox-next { right: -60px; }
+.lightbox-prev {
+    left: -60px;
+}
+
+.lightbox-next {
+    right: -60px;
+}
 
 .lightbox-close {
     position: absolute;
@@ -1424,8 +1495,14 @@ body.intro-active {
         bottom: -55px;
         transform: none;
     }
-    .lightbox-prev { left: calc(50% - 60px); }
-    .lightbox-next { right: calc(50% - 60px); }
+
+    .lightbox-prev {
+        left: calc(50% - 60px);
+    }
+
+    .lightbox-next {
+        right: calc(50% - 60px);
+    }
 }
 
 /* --------------------------------------------------------------------------
@@ -1474,7 +1551,8 @@ body.intro-active {
     color: var(--accent-burgundy);
 }
 
-.form-input, .form-textarea {
+.form-input,
+.form-textarea {
     width: 100%;
     padding: 12px 18px;
     border-radius: 12px;
@@ -1487,7 +1565,8 @@ body.intro-active {
     outline: none;
 }
 
-.form-input:focus, .form-textarea:focus {
+.form-input:focus,
+.form-textarea:focus {
     border-color: var(--accent-burgundy);
     box-shadow: 0 0 0 3px rgba(106, 27, 41, 0.15);
 }
@@ -1670,11 +1749,27 @@ body.intro-active {
 }
 
 @keyframes heartBeat {
-    0%, 100% { transform: scale(1); }
-    14% { transform: scale(1.22); }
-    28% { transform: scale(1); }
-    42% { transform: scale(1.18); }
-    70% { transform: scale(1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    14% {
+        transform: scale(1.22);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.18);
+    }
+
+    70% {
+        transform: scale(1);
+    }
 }
 
 .dev-highlight-badge {
@@ -1778,8 +1873,15 @@ body.intro-active {
         transform: translateY(105vh) translateX(0) rotate(0deg) scale(0.3);
         opacity: 0;
     }
-    15% { opacity: var(--max-op, 0.55); }
-    85% { opacity: var(--max-op, 0.55); }
+
+    15% {
+        opacity: var(--max-op, 0.55);
+    }
+
+    85% {
+        opacity: var(--max-op, 0.55);
+    }
+
     100% {
         transform: translateY(-10vh) translateX(var(--sway, 60px)) rotate(var(--rot, 360deg)) scale(1.1);
         opacity: 0;
@@ -1798,10 +1900,21 @@ body.intro-active {
     transform: translateY(0);
 }
 
-.delay-1 { transition-delay: 0.12s; }
-.delay-2 { transition-delay: 0.24s; }
-.delay-3 { transition-delay: 0.36s; }
-.delay-4 { transition-delay: 0.48s; }
+.delay-1 {
+    transition-delay: 0.12s;
+}
+
+.delay-2 {
+    transition-delay: 0.24s;
+}
+
+.delay-3 {
+    transition-delay: 0.36s;
+}
+
+.delay-4 {
+    transition-delay: 0.48s;
+}
 
 /* --------------------------------------------------------------------------
    14. MOBILE ADJUSTMENTS
